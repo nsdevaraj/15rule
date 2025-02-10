@@ -37,9 +37,12 @@ interface PdfDocumentProps {
   monthlyInvestment: number;
   duration: number;
   returnRate: number;
+  inflationRate: number;
   investedAmount: number;
   totalWealth: number;
   totalEarnings: number;
+  totalWealthReal: number;
+  totalEarningsReal: number;
 }
 
 const formatCurrency = (amount: number) => {
@@ -58,6 +61,8 @@ export const PdfDocument = ({
   investedAmount,
   totalWealth,
   totalEarnings,
+  totalWealthReal,
+  totalEarningsReal,
 }: PdfDocumentProps) => (
   <Document>
     <Page size="A4" style={styles.page}>
